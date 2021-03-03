@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<ul>
+    {% for field in fields %}
+    <a href="{{ field.get_absolute_url }}">
+        <li>
+            <p>Название поля: {{ field.name }}</p>
+            <p>Площадь поля: {{ field.square }} га</p>
+        </li>
+    </a>
+    {% endfor %}
+</ul>
+
+ <a href="{% url 'fields:add_field' %}" class="btn btn-info mb-2">Добавить поле</a>
